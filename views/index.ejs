@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Create QR</title>
+    <link rel="icon" type="image/png" href="/img/icon.png" />
+</head>
+
+<body>
+    <h1>Create a QR code</h1>
+
+    <form action="" method="POST">
+        <label for="type">QR type:</label>
+        <select name="type" id="type">
+            <option value="url">URL</option>
+            <option value="phone">Phone number</option>
+            <option value="sms">SMS (text message)</option>
+            <option value="wifi">Wi-Fi</option>
+            <option value="email">Email</option>
+            <option value="contact">Contact card</option>
+            <option value="event">Calendar event</option>
+        </select>
+        <br /> <br />
+
+        <div class="form-group" id="urlDiv">
+            <label for="url">Enter a URL: </label>
+            <input name="url" id="url" type="text" placeholder="Enter a URL here...">
+        </div>
+
+        <div class="form-group" id="phoneDiv">
+            <label for="phone">Enter a phone number: </label>
+            <input name="phone" id="phone" type="tel" placeholder="Enter a phone number here...">
+        </div>
+
+        <div class="form-group" id="smsDiv">
+            <label for="sms">Enter a number to text message: </label>
+            <input name="sms" id="sms" type="tel" placeholder="Enter a phone number to SMS here..."><br />
+            <label for="smsMessage">Enter a SMS message: </label>
+            <input name="smsMessage" id="smsMessage" type="text" placeholder="Enter SMS message here...">
+        </div>
+
+        <div class="form-group" id="wifiDiv">
+            <label for="auth">Authentication type: </label>
+            <select name="auth" id="auth">
+                <option value="WPA">WPA (probable)</option>
+                <option value="WEP">WEP</option>
+                <option value="none">None</option>
+            </select> <br />
+            <label for="name">Network name: </label>
+            <input name="name" id="name" type="text" placeholder="Enter network name here..."> <br />
+            <label for="password">Network password: </label>
+            <input name="password" id="password" type="password" placeholder="Enter the network password here...">
+        </div>
+
+        <div class="form-group" id="emailDiv">
+            <label for="email">Enter an email: </label>
+            <input name="email" id="email" type="email" placeholder="Enter email here..."> <br />
+            <label for="emailSubject">Enter a subject: </label>
+            <input name="emailSubject" id="emailSubject" type="text" placeholder="Enter email subject here...">
+        </div>
+
+        <div class="form-group" id="eventDiv">
+            <label for="eventOrganizerName">Enter an event title: </label>
+            <input name="eventOrganizerName" id="eventOrganizerName" type="text"
+                placeholder="Enter the event organizer's name here..."> <br />
+            <label for="eventOrganizerEmail">Enter an event title: </label>
+            <input name="eventOrganizerEmail" id="eventOrganizerEmail" type="text"
+                placeholder="Enter the event organizer's email here..."> <br />
+            <label for="eventTitle">Enter an event title: </label>
+            <input name="eventTitle" id="eventTitle" type="text" placeholder="Enter a event title here..."> <br />
+            <label for="eventStart">Event start: </label>
+            <input name="eventStart" id="eventStart" type="datetime-local"> <br />
+            <label for="eventEnd">Event end:</label>
+            <input name="eventEnd" id="eventEnd" type="datetime-local">
+        </div>
+        <br />
+        <input type="submit" value="Create QR">
+    </form>
+
+    <% if (message) { %>
+    <p>
+        <%= message %>
+    </p>
+    <% } %>
+
+    <% if (src) { %>
+    <img src="<%= src %>" alt="" /> <br />
+    <small>Right click, and "Save Image As..." to save the QR code.</small>
+    <% } %>
+
+    <script src="/jquery/jquery.js"></script>
+    <script>
+        let hideAll = () => {
+            $('#urlDiv').hide();
+            $('#phoneDiv').hide();
+            $('#smsDiv').hide();
+            $('#wifiDiv').hide();
+            $('#emailDiv').hide();
+            $('#eventDiv').hide();
+        };
+        hideAll();
+
+        $("#type").change(function () {
+            hideAll();
+            switch ($(this).val()) {
+                case 'url':
+                    $('#urlDiv').show();
+                    break;
+                case 'phone':
+                    $('#phoneDiv').show();
+                    break;
+                case 'sms':
+                    $('#smsDiv').show();
+                    break;
+                case 'wifi':
+                    $('#wifiDiv').show();
+                    break;
+                case 'email':
+                    $('#emailDiv').show();
+                    break;
+                case 'event':
+                    $('#eventDiv').show();
+                    break;
+                default:
+                    $('#urlDiv').show();
+            }
+        });
+        $("#type").trigger("change");
+    </script>
+</body>
+
+</html>

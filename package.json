@@ -1,0 +1,27 @@
+{
+  "name": "qr",
+  "version": "1.0.0",
+  "description": "QR code generator",
+  "main": "app.js",
+  "scripts": {
+    "dev": "nodemon app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/brianbianchi/qr.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/brianbianchi/qr/issues"
+  },
+  "homepage": "https://github.com/brianbianchi/qr#readme",
+  "dependencies": {
+    "ejs": "^3.1.6",
+    "express": "^4.17.1",
+    "jquery": "^3.6.0",
+    "nodemon": "^2.0.12",
+    "qrcode": "^1.4.4"
+  }
+}
