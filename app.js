@@ -49,18 +49,12 @@ app.post("/", (req, res) => {
             }
             break;
         case 'contact':
-            // const { event, eventStart, eventEnd } = req.body;
+            const { contactFirstName, contactLastName, contactPhone, contactEmail, } = req.body;
             qrData = `
 BEGIN:VCARD
-N:Smith;John;
-TEL;TYPE=work,VOICE:(111) 555-1212
-TEL;TYPE=home,VOICE:(404) 386-1017
-TEL;TYPE=fax:(866) 408-1212
-EMAIL:smith.j@smithdesigns.com
-ORG:Smith Designs LLC
-TITLE:Lead Designer
-ADR;TYPE=WORK,PREF:;;151 Moore Avenue;Grand Rapids;MI;49503;United States of America
-URL:https://www.smithdesigns.com
+N:${contactFirstName};${contactLastName};
+TEL;TYPE=mobile:${contactPhone}
+EMAIL:${contactEmail}
 VERSION:3.0
 END:VCARD
 `;

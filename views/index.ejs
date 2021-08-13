@@ -60,14 +60,29 @@
             <input name="emailSubject" id="emailSubject" type="text" placeholder="Enter email subject here...">
         </div>
 
+        <div class="form-group" id="contactDiv">
+            <label for="contactFirstName">Enter contact's first name: </label>
+            <input name="contactFirstName" id="contactFirstName" type="text"
+                placeholder="Enter the contact's first name here..."> <br />
+            <label for="contactLastName">Enter contact's last name: </label>
+            <input name="contactLastName" id="contactLastName" type="text"
+                placeholder="Enter the contact's last name here..."> <br />
+            <label for="contactPhone">Enter contact's phone number: </label>
+            <input name="contactPhone" id="contactPhone" type="text"
+                placeholder="Enter the contact's phone number here..."> <br />
+            <label for="contactEmail">Enter contact's email: </label>
+            <input name="contactEmail" id="contactEmail" type="email" placeholder="Enter contact's email here...">
+            <br />
+        </div>
+
         <div class="form-group" id="eventDiv">
-            <label for="eventOrganizerName">Enter an event title: </label>
+            <label for="eventOrganizerName">Enter the event organizer's name: </label>
             <input name="eventOrganizerName" id="eventOrganizerName" type="text"
                 placeholder="Enter the event organizer's name here..."> <br />
-            <label for="eventOrganizerEmail">Enter an event title: </label>
+            <label for="eventOrganizerEmail">Enter the event organizer's email: </label>
             <input name="eventOrganizerEmail" id="eventOrganizerEmail" type="text"
                 placeholder="Enter the event organizer's email here..."> <br />
-            <label for="eventTitle">Enter an event title: </label>
+            <label for="eventTitle">Enter the event title: </label>
             <input name="eventTitle" id="eventTitle" type="text" placeholder="Enter a event title here..."> <br />
             <label for="eventStart">Event start: </label>
             <input name="eventStart" id="eventStart" type="datetime-local"> <br />
@@ -97,6 +112,7 @@
             $('#smsDiv').hide();
             $('#wifiDiv').hide();
             $('#emailDiv').hide();
+            $('#contactDiv').hide();
             $('#eventDiv').hide();
         };
         hideAll();
@@ -118,6 +134,9 @@
                     break;
                 case 'email':
                     $('#emailDiv').show();
+                    break;
+                case 'contact':
+                    $('#contactDiv').show();
                     break;
                 case 'event':
                     $('#eventDiv').show();
