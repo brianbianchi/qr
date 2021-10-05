@@ -1,5 +1,6 @@
-# qr
-Quick response, or QR, is a type of barcode that can store a multitude of information. [docs](https://www.qr-code-generator.com/solutions/)
+> This repo is an implementation of a QR generator using [nodejs](https://nodejs.org/en/) and [ejs](https://ejs.co/).
+
+> Quick response, or QR, is a type of barcode that can store a multitude of information. [docs](https://www.qr-code-generator.com/solutions/)
 
 ## URL
 
@@ -26,12 +27,12 @@ SMSTO::This is a sample text message // phone number can be added after scanning
 WIFI:S:<SSID>;T:<WEP|WPA|blank>;P:<PASSWORD>;H:<true|false|blank>;
 ```
 
-| Parameter | Optional? | Example | Description |
-|-----------|-----------|-------------|--------|
-| T | Optional | WPA | Authentication type; can be WEP or WPA, or leave empty for no password. |
-| S | Required | MyNetworkName | Network SSID. Required. |
-| P | Optional |ThisIsMyPassword | Password, ignored if T is left blank. |
-| H | Optional | true | True if the network SSID is hidden. |
+| Parameter | Optional? | Example          | Description                                                             |
+| --------- | --------- | ---------------- | ----------------------------------------------------------------------- |
+| T         | Optional  | WPA              | Authentication type; can be WEP or WPA, or leave empty for no password. |
+| S         | Required  | MyNetworkName    | Network SSID. Required.                                                 |
+| P         | Optional  | ThisIsMyPassword | Password, ignored if T is left blank.                                   |
+| H         | Optional  | true             | True if the network SSID is hidden.                                     |
 
 ## Email
 
@@ -58,18 +59,18 @@ VERSION:3.0
 END:VCARD
 ```
 
-| Parameter | Optional? | Description | Format |
-|-----------|-----------|-------------|--------|
-| BEGIN | Required | All vCards must start with this parameter | BEGIN:VCARD |
-| N | Optional | Full name | N:Smith;John; |
-| TEL;TYPE | Optional | Telephone number and type (work, home, fax) | TEL;TYPE=work,VOICE:(111) 555-1212 TEL;TYPE=home,VOICE:(404) 386-1017 TEL;TYPE=fax:(866) 408-1212 |
-| EMAIL | Optional | Email address | EMAIL:smith.j@smithdesigns.com |
-| ORG | Optional | Company name | ORG:Smith Designs LLC |
-| TITLE | Optional | Job title | TITLE:Lead Designer |
-| ADR; TYPE | Optional | Home or work address in order: Street; City; State; Postal Code; Country | ADR;TYPE=WORK,PREF:;;151 Moore Avenue;Grand Rapids;MI;49503;United States of America |
-| URL | Optional | Link to a website | URL:https://www.smithdesigns.com |
-| VERSION | Required | The version of the vCard specification. | VERSION:3.0 |
-| END | Required | All vCards must end with this parameter | END:VCARD |
+| Parameter | Optional? | Description                                                              | Format                                                                                            |
+| --------- | --------- | ------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------- |
+| BEGIN     | Required  | All vCards must start with this parameter                                | BEGIN:VCARD                                                                                       |
+| N         | Optional  | Full name                                                                | N:Smith;John;                                                                                     |
+| TEL;TYPE  | Optional  | Telephone number and type (work, home, fax)                              | TEL;TYPE=work,VOICE:(111) 555-1212 TEL;TYPE=home,VOICE:(404) 386-1017 TEL;TYPE=fax:(866) 408-1212 |
+| EMAIL     | Optional  | Email address                                                            | EMAIL:smith.j@smithdesigns.com                                                                    |
+| ORG       | Optional  | Company name                                                             | ORG:Smith Designs LLC                                                                             |
+| TITLE     | Optional  | Job title                                                                | TITLE:Lead Designer                                                                               |
+| ADR; TYPE | Optional  | Home or work address in order: Street; City; State; Postal Code; Country | ADR;TYPE=WORK,PREF:;;151 Moore Avenue;Grand Rapids;MI;49503;United States of America              |
+| URL       | Optional  | Link to a website                                                        | URL:https://www.smithdesigns.com                                                                  |
+| VERSION   | Required  | The version of the vCard specification.                                  | VERSION:3.0                                                                                       |
+| END       | Required  | All vCards must end with this parameter                                  | END:VCARD                                                                                         |
 
 ## Calendar
 
@@ -91,7 +92,7 @@ END:VEVENT
 END:VCALENDAR
 ```
 
-##  Crypto
+## Crypto
 
 ```
 bitcoin:1GdK9UzpHBzqzX2A9JFP3Di4weBwqgmoQA?
