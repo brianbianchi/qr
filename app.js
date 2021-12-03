@@ -1,9 +1,12 @@
 const express = require("express");
+const path = require("path");
 const qr = require("qrcode");
 const app = express();
 
 app.set("view engine", "ejs");
-app.use('/jquery', express.static(__dirname + '/node_modules/jquery/dist/'));
+app.use("/css", express.static(path.join(__dirname, "node_modules/bootstrap/dist/css")));
+app.use("/js", express.static(path.join(__dirname, "node_modules/bootstrap/dist/js")));
+app.use("/js", express.static(path.join(__dirname, "node_modules/jquery/dist")));
 app.use("/img", express.static('img'));
 app.use(express.urlencoded({
     extended: false
@@ -89,7 +92,7 @@ END:VCALENDAR
     });
 });
 
-const port = process.env.PORT || 5000;
+const port = process.env.PORT || 4000;
 app.listen(port, () => {
     console.log(`Server running on port ${port}.`);
 });
